@@ -11,13 +11,12 @@ function Characters() {
         <div key={i}>
           <h2>{character.name}</h2>
           <ul>
+            <li>Origin: {character.origin.name}</li>
+            <li>Species: {character.species}</li>
+            <li>Gender: {character.gender}</li>
             <li>Status: {character.status}</li>
+            <li>First Appearance: {character.episode}</li>
           </ul>
-          {/* <ul>
-            {character.movies.map((movie, j) => (
-              <li key={j}>{movie}</li>
-            ))}
-          </ul> */}
         </div>
       ))}
     </ul>
