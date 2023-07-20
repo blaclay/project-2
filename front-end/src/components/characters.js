@@ -1,13 +1,24 @@
-import React from "react";
-// import { characters } from "../db/db";
+import React, { useState, useEffect } from "react";
+// import { characters } from "http://localhost:4000/db/db";
 
 function Characters() {
-    var data = require("../db/db.json");
+    // var data = require("4000/db/db.json");
+    
+  const [charactersList, setCharacters] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/characters")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCharacters(data);
+      });
+  }, []);
 
   return <div>
     <h1>Characters</h1>
     <ul className="Characters">
-      {data.characters.map((character, i) => (
+      {charactersList.map((character, i) => (
         <div key={i}>
           <h2>{character.name}</h2>
           <ul>
