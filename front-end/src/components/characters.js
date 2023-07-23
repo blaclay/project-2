@@ -26,7 +26,7 @@ function Characters() {
             <li>Species: {character.species}</li>
             <li>Gender: {character.gender}</li>
             <li>Status: {character.status}</li>
-            <li>First Appearance: {character.episode}</li>
+            <li>First Appearance: {character.episode[0]}</li>
           </ul>
         </div>
       ))}

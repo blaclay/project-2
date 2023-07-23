@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Accordion from 'react-bootstrap/Accordion';
 
 function Locations() {
-    var data = require("../db/db.json");
+  // var data = require("../db/db.json");
+
+  const [locationsList, setLocations] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/locations")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setLocations(data);
+      });
+  }, []);
 
   return <div>
     <h1>Locations & Locales</h1>
     <ul className="Locations">
-      {data.locations.map((location, i) => (
+      {locationsList.map((location, i) => (
         <div key={i}>
-          <h2>{location.name}</h2>
-          <ul>
-            <li>Type of Location: {location.type}</li>
-            <li>Dimension: {location.dimension}</li>
-            <li>Residents: {location.residents}</li>
-          </ul>
+          <Accordion>
+            <Accordion.Header>{location.name}</Accordion.Header>
+            <Accordion.Body>
+              <ul>
+                <li>Type of Location: {location.type}</li>
+                <li>Dimension: {location.dimension}</li>
+                <li>Residents: {location.residents}</li>
+              </ul>
+            </Accordion.Body>
+          </Accordion>
         </div>
       ))}
     </ul>
