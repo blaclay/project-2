@@ -15,7 +15,7 @@ function Episodes() {
   }, []);
 
   return <div>
-    <h1>Episode List</h1>
+    <h1 class="p-3 text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle rounded-3">Episode List</h1>
     <ul className="Episodes">
       {episodeList.map((episode, i) => (
         <div key={i}>

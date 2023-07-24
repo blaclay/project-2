@@ -16,8 +16,29 @@ function Characters() {
       });
   }, []);
 
+  // useEffect(() => {
+  //   fetch("https://rickandmortyapi.com/api/episode")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       // var countPage = data.info.pages;
+  //       var nextPageURL = data.info.next;
+  //       setCharacterEpisode(data.results);
+  //       while (nextPageURL) {
+  //         fetch(nextPageURL)
+  //           .then((response2) => response2.json())
+  //           .then((data2) => {
+  //             nextPageURL = data2.info.next
+  //             console.log(data2);
+  //             setCharacterEpisode([...charactersEpisodeList, ...(data2.results)]);
+  //             console.log(charactersEpisodeList);
+  //           });
+  //       }
+  //     });
+  // }, []);
+
   return <div>
-    <h1>Characters</h1>
+    <h1 class="p-3 text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle rounded-3">Characters</h1>
     <ul className="Characters">
       {charactersList.map((character, i) => (
         <div key={i}>

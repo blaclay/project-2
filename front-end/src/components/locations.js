@@ -16,7 +16,7 @@ function Locations() {
   }, []);
 
   return <div>
-    <h1>Locations & Locales</h1>
+    <h1 class="p-3 text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle rounded-3">Locations & Locales</h1>
     <ul className="Locations">
       {locationsList.map((location, i) => (
         <div key={i}>
