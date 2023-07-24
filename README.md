@@ -23,7 +23,7 @@ To run the app locally, open a Ubuntu terminal and do the following:
 
 
 ## How to Use
-Here is the video tutorial: youtube.com
+Here is the video tutorial on how to use the app: https://youtu.be/rG6L1cinpJA
 
 ## Contributor's Guide
 If you want to contribute to the project, please follow these steps:
